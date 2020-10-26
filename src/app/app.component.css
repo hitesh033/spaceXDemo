@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #cccccc;
+}
+
+.filter-main, .programs-main {
+    display: inline-flex;
+}
+
+.filter-main {
+    width: 20%;
+}
+
+.programs-main {
+    width: 80%;
+}

@@ -1,0 +1,14 @@
+<div class="programs">
+    <div *ngFor="let options of filterOptions" class="program-card">
+        <img [src]="options.links.mission_patch" alt="" class="program-img" style="width:100%">
+        <div class="program-meta-data">
+            <h4><b>{{options.rocket.rocket_name}}</b></h4>
+            <ul>
+                <li><b>Mission IDs:</b> </li>
+                <li><b>Launch Year:</b> {{options.launch_year}}</li>
+                <li><b>Successful Launch:</b> {{options.launch_success}}</li>
+                <li><b>Successful Landing:</b> </li>
+            </ul>
+        </div>
+    </div>
+</div>
