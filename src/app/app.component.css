@@ -7,7 +7,7 @@
     width: 100%;
     height: 100%;
     display: flex;
-    background: #cccccc;
+    
 }
 
 .filter-main, .programs-main {
@@ -15,9 +15,9 @@
 }
 
 .filter-main {
-    width: 20%;
+    width: 15%;
 }
 
 .programs-main {
-    width: 80%;
+    width: 85%;
 }

@@ -7,19 +7,20 @@ import { LaunchDataService } from '../../services/launch-data.service';
   styleUrls: ['./programs.component.css']
 })
 export class ProgramsComponent implements OnInit {
-
-  constructor(private spacexDataService: LaunchDataService) { }
   filterOptions;
+
+  constructor(private spacexDataService: LaunchDataService) { 
+    this.filterOptions = [];
+  }
 
   ngOnInit(): void {
     this.getPrograms();
   }
 
   getPrograms() {
-    return this.spacexDataService.getSpaceXData()
-      .subscribe(data => {
-        this.filterOptions = data;
-      });
+    const getPrograms = JSON.parse(localStorage.getItem('spacex-data'));
+    // this.filterOptions = JSON.parse(getPrograms);
+    getPrograms.map(x => this.filterOptions.filter(a => a.launch_year == x.launch_year).length > 0 ? null : this.filterOptions.push(x));
   }
 
 }

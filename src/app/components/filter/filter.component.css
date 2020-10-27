@@ -3,20 +3,32 @@
     background: #ffffff;
     border-radius: 10px;
     text-align: center;
-    margin: 10px;
+    margin: 20px;
+    padding: 15px;
+}
+
+.filter-options p {
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
 }
 
 .filter-year {
-    width: 50%;
+    width: 100%;
+    margin: auto;
 }
 
-.year-btn {
+.filter-chip {
     font-size: 12px;
-    background: #a1cb9c;
+    background: #d3f0b3;
     color: #2b2a2a;
-    padding: 5px;
-    margin: 5px;
+    padding: 3px 11px;
+    margin: 5px 12px;
     display: inline-block;
-    border-radius: 15%;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+.filter-chip:hover {
+    background: #95cb59;
 }

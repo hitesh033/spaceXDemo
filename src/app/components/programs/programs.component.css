@@ -18,6 +18,11 @@ li {
     border-radius: 5px;
 }
 
+.program-card:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 .program-img {
     background: #dddddd;
     border-radius: 5px;

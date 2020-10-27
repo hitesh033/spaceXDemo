@@ -1,8 +1,23 @@
 <div class="filter-options">
-    <h2>Filter</h2>
-    <div class="filter-year">
-        <span *ngFor="let options of filterOptions" class="year-btn">
-            {{options.launch_year}}
-        </span>
+    <h3>Filters</h3>
+    <div class="year-filter">
+        <p>Launch Year</p>
+        <div class="filter-year">
+            <span *ngFor="let options of filterOptions" class="filter-chip">
+                {{options.launch_year}}
+            </span>
+        </div>
+    </div>
+
+    <div class="launch-filter">
+        <p>Successful Launch</p>
+        <span class="filter-chip">True</span>
+        <span class="filter-chip">False</span>
+    </div>
+
+    <div class="landing-filter">
+        <p>Successful Landing</p>
+        <span class="filter-chip">True</span>
+        <span class="filter-chip">False</span>
     </div>
 </div>
