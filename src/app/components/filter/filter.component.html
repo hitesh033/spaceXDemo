@@ -3,8 +3,12 @@
     <div class="year-filter">
         <p>Launch Year</p>
         <div class="filter-year">
-            <span *ngFor="let options of filterOptions" class="filter-chip">
-                {{options.launch_year}}
+            <span 
+            *ngFor="let option of filterOptions; let i = index" 
+            class="filter-chip" 
+            (click)="applyYearFilter(i, option)"
+            [ngClass]="{'active': option.active}">
+                {{option.launch_year}}
             </span>
         </div>
     </div>

@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { ProgramsComponent } from './components/programs/programs.component';
 import { HomeComponent } from './components/home/home.component';
+import { DataFilterPipe } from './filters/data-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilterComponent,
     ProgramsComponent,
-    HomeComponent
+    HomeComponent,
+    DataFilterPipe
   ],
   imports: [
     BrowserModule,

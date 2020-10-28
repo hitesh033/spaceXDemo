@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="!loading">
   <h2>SpaceX Launch Programs</h2>
   <div class="main">
     <div class="filter-main">
@@ -8,4 +8,8 @@
       <app-programs></app-programs>
     </div>
   </div>
+</div>
+
+<div class="loader" *ngIf="loading">
+  Loading...
 </div>

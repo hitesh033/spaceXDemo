@@ -1,26 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { LaunchDataService } from '../../services/launch-data.service';
+import { DataFilterPipe } from '../../filters/data-filter.pipe'; 
+
 
 @Component({
   selector: 'app-programs',
   templateUrl: './programs.component.html',
-  styleUrls: ['./programs.component.css']
+  styleUrls: ['./programs.component.css'],
+  providers: [DataFilterPipe]
 })
 export class ProgramsComponent implements OnInit {
-  filterOptions;
+  programs;
+  public data: any;
 
-  constructor(private spacexDataService: LaunchDataService) { 
-    this.filterOptions = [];
+  constructor(private pipe: DataFilterPipe) { 
+    this.programs = [];
   }
 
   ngOnInit(): void {
     this.getPrograms();
   }
 
+  ngDoCheck() {
+    const apiData = localStorage.getItem('spacex-data');
+    const selectedCriteria = localStorage.getItem('selectedCriteria');
+    if (!selectedCriteria) return;
+    this.programs = this.pipe.transform(apiData, selectedCriteria); 
+  }
+
   getPrograms() {
     const getPrograms = JSON.parse(localStorage.getItem('spacex-data'));
-    // this.filterOptions = JSON.parse(getPrograms);
-    getPrograms.map(x => this.filterOptions.filter(a => a.launch_year == x.launch_year).length > 0 ? null : this.filterOptions.push(x));
+    getPrograms.map(x => this.programs.filter(a => a.launch_year == x.launch_year).length > 0 ? null : this.programs.push(x));
   }
+
 
 }
